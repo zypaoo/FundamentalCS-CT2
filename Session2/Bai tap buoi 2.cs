@@ -2,11 +2,12 @@
 {
     private static void Main(string[] args)
     {
-       /*bai1();
-       bai2();
-       bai3();
-       bai4();*/
-       bai5();
+        /*bai1();
+        bai2();
+        bai3();
+        bai4();
+        bai5();*/
+        bai8();
     }
     static void bai1()
     {
@@ -64,7 +65,13 @@
         }
 
     }
+    static void bai8()
+    {
+        Console.Write("Nhap vao ban kinh r: ");
+        double r = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Dien tich hinh tron la: " + (r * r * 3.14));
 
+    }
 
 }
 
