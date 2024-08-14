@@ -105,8 +105,7 @@ internal class Program
     {
         Console.Write("Nhap vao so ngay can chuyen: ");
         int a10 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($" Ta co: {a10 / 365} nam va {a10 % 365} ngay ");
-        Console.WriteLine($" Ta co: {a10 / 7} tuan va {a10 % 7} ngay");
+        Console.WriteLine($" Ta co: {a10 / 365} nam va {(a10 % 365)/7} tuan va {(a10 % 365)%7} ngay ");
     }
 }
 
