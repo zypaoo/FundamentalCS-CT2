@@ -53,17 +53,21 @@ internal class Program
     }
     static void bai5()
     {
-        Console.Write("Nhap vào so do muon chuyen (C or F): ");
-        double a5 = Convert.ToDouble(Console.ReadLine());
+        
         Console.Write("Loai do ban muon chuyen sang la (C or F): ");
-        string b5 = Convert.ToString(Console.ReadLine());
-        if (b5 == "C")
+        string a5 = Convert.ToString(Console.ReadLine());
+        a5 = a5.ToUpper();
+        if (a5 == "C")
         {
-            Console.WriteLine("So do C la: " + (5 / 9 * (a5 - 32)));
+            Console.Write("Nhap vao so do F : ");
+            double b5 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("So do C la: " + ((b5-32)/1.8));
         }
-        else if (b5 == "F") 
+        else if (a5 == "F") 
         {
-            Console.WriteLine("So do F la: " + (9 / 5 * a5 + 32));
+            Console.Write("Nhap vao so do C : ");
+            double b5 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("So do F la: " + (1.8 * b5 + 32));
         }
         else
         {
