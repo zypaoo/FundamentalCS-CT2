@@ -17,37 +17,37 @@ internal class Program
     }
     static void bai1()
     {
-        Console.Write("nhập vào a: ");
-        int a1 = Convert.ToInt32(Console.ReadLine());
-        Console.Write("nhập vào b: ");
-        int b1 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Tổng hai số là: " + (a1 + b1));
+        Console.Write("nhap vao so a: ");
+        int num_a1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("nhap vao so b: ");
+        int num_b1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Tong hai so la: " + (num_a1 + num_b1));
     }
     static void bai2()
     {
-        Console.Write("nhập vào a: ");
+        Console.Write("nhap vao so a: ");
         int a2 = Convert.ToInt32(Console.ReadLine());
-        Console.Write("nhập vào b: ");
+        Console.Write("nhap vao so b: ");
         int b2 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("trước khi chuyển: a = {0}, b={1}", a2, b2);
+        Console.WriteLine("truoc khi chuyen: a = {0}, b={1}", a2, b2);
         a2 = a2 + b2;
         b2 = a2 - b2;
         a2 = a2 - b2;
-        Console.WriteLine("sau khi chuyển: a = {0}, b={1}", a2, b2);
+        Console.WriteLine("sau khi chuyen: a = {0}, b={1}", a2, b2);
     }
 
     static void bai3()
     {
-        Console.Write("nhập vào a: ");
-        double a3 = Convert.ToDouble(Console.ReadLine());
-        Console.Write("nhập vào b: ");
-        double b3 = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Tích hai số là: " + (a3 * b3));
+        Console.Write("nhap vao so a: ");
+        double num_a3 = Convert.ToDouble(Console.ReadLine());
+        Console.Write("nhap vao so b: ");
+        double num_b3 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Tich hai so la: " + (num_a3 * num_b3));
 
     }
     static void bai4()
     {
-        Console.Write("nhập vào số feet: ");
+        Console.Write("nhap vao so feet: ");
         double a4 = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine($"{a4} feet = {a4 * 0.3048} meter");
     }
@@ -95,21 +95,21 @@ internal class Program
     //bỏ bài 7
     static void bai8()
     {
-        Console.Write("Nhap vao ban kinh r: ");
+        Console.Write("Nhap vao ban kinh r (cm): ");
         double r = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Dien tich hinh tron la: " + (r * r * 3.14));
+        Console.WriteLine("Dien tich hinh tron ban kinh " + r + " cm la: " + (r * r * 3.14) + " cm^2" );
     }
     static void bai9()
     {
-        Console.Write("Nhap vao canh a9: ");
-        double r= Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine("Dien tich hinh vuong la: " + (r * r));
+        Console.Write("Nhap vao canh a9 (cm): ");
+        double a9 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Dien tich hinh vuong canh " + a9 + " cm la: " + (a9 * a9) + " cm^2");
     }
     static void bai10()
     {
         Console.Write("Nhap vao so ngay can chuyen: ");
-        int a10 = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($" Ta co: {a10 / 365} nam va {(a10 % 365)/7} tuan va {(a10 % 365)%7} ngay ");
+        int day_a10 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($" Ta co: {day_a10 / 365} nam va {(day_a10 % 365)/7} tuan va {(day_a10 % 365)%7} ngay ");
     }
 }
 
