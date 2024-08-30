@@ -9,7 +9,7 @@ namespace Session2
 {
     internal class Bai_tap_buoi_3
     {
-        private static void Main(string[] args)
+        private static void Main2(string[] args)
         {
             baitap1();
             baitap2();
