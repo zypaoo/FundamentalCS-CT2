@@ -11,7 +11,16 @@ namespace Session2
     {
         private static void Main(string[] args)
         {
+            baitap1();
+            baitap2();
+            baitap3();
+            baitap4();
+            baitap5();
+            baitap6();
+            baitap7();
             baitap8();
+            baitap9();
+            baitap10();
         }
         static void baitap1()
         {
@@ -189,7 +198,49 @@ namespace Session2
         }
         static void baitap9()
         {
-
+        Console.Write("Enter a number: ");
+        int n = int.Parse(Console.ReadLine());
+        int sum= 0;
+        for( int i=1; i<n; i++)
+        {
+            if(n%i==0)
+            {
+                sum+=i;
+            }
+        }
+        if(sum==n)
+        {
+            Console.WriteLine( n+" is a perfect number");
+        }
+        else
+        {
+            Console.WriteLine( n+" is not a perfect number");
+        }
+        }
+        static void baitap10()
+        {
+        Console.Write("Enter a number: ");
+        int n = int.Parse(Console.ReadLine());
+        int count=0;
+        if(n<2)
+        {
+            Console.WriteLine(n +" is not a prime number");
+        }
+        for (int i=2; i<n; i++)
+        {
+            if(n%i==0)
+            {
+                count++;
+            }
+        }
+        if (count==0)
+        {
+            Console.WriteLine(n +" is a prime number");
+        }
+        else
+        {
+            Console.WriteLine(n +" is not a prime number");
+        }
         }
     }
 }
