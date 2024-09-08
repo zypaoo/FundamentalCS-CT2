@@ -128,7 +128,7 @@ namespace Session2
         }
         static void baitap6()
         {
-            Console.Write("Select multiplication table <2-9>: ");
+            Console.Write("Select multiplication table : ");
             int number= int.Parse(Console.ReadLine());
             for (int i = 1; i <= 10; i++)
             {
