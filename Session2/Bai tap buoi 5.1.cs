@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,11 @@ namespace Session2
 {
     internal class Bai_tap_buoi_5
     {
-        public static void Maina(string[] args)
+        public static void Main(string[] args)
         {
             int[] a = new int[100];
             InputRandomData(a);
-            PrintArray(a);
+            //PrintArray(a);
             //CalculateAvg(a);
             //Console.Write("The value you want to check: ");
             //int val = int.Parse(Console.ReadLine());
@@ -24,16 +25,14 @@ namespace Session2
             //    Console.WriteLine("Position: "+ FindIndex(a, val));
             //Console.Write("Enter a number u wanna remove: ");
             //int ele = int.Parse(Console.ReadLine());
-            //bool r2 = RemoveEle(a, ele);
-            //if (r2)
-            //{
-            //    Array.Resize(ref a, a.Length - 1);
-            //}
             //PrintArray(a);
             //MaxMin(a);
             //Reserve(a);
             //FindDupe(a);
-            RemoveDupe(a);
+            //int index = 0;
+            int[] c = new int[100];
+            PrintArray(a);
+            RemoveDupe(a,c);
 
         }
         static void InputRandomData(int[] a)
@@ -83,7 +82,7 @@ namespace Session2
             }
             return -1;
         }
-        static bool RemoveEle(int[] a, int ele)
+        static void RemoveEle(ref int[] a, int ele)
         {
             for (int i = 0; i < a.Length; i++)
             {
@@ -92,11 +91,13 @@ namespace Session2
                     for (int j = i; j < a.Length - 1; j++)
                     {
                         a[j] = a[j + 1];
-                    }
-                    return true;
+                       
+                    }                    
+                    Array.Resize(ref a, a.Length-1);
+                    i--; 
                 }
             }
-            return false;
+
         }
         static void MaxMin(int[] a)
         {
@@ -118,11 +119,11 @@ namespace Session2
                 Console.Write(a[i] + " ");
             }
         }
-        static void FindDupe(int[] a)
+        static void FindDupe(int[] a,ref int[] c)
         {
             Array.Sort(a);
-            PrintArray(a);
-            Console.Write(" The duplicate value: ");
+            int index = 0;
+            Console.Write("The duplicate values: ");
             bool[] CheckPrint = new bool[100];
             for (int i = 0; i < a.Length; i++)
             {
@@ -131,29 +132,31 @@ namespace Session2
 
                     if (a[j] == a[i])
                     {
+                        
                         if (!CheckPrint[a[i]])
                         {
-                            Console.Write(a[i] + " ");
+                            c[index] = a[i];
+                            index++;
                             CheckPrint[a[i]] = true;
                         }
                         break;
                     }
                 }
             }
+            Array.Resize( ref c, index);    
+            PrintArray(c);
         }
-        static void RemoveDupe(int[] a)
+        static void RemoveDupe(int[] a, int[] c)
         {
-            Array.Sort(a);
-            if (a[0] != a[1])
-                Console.Write(a[0] + " ");
-            for (int i = 1; i < a.Length-1; i++)
+            FindDupe(a,ref c);
+            for (int i = 0; i < c.Length; i++)
             {
-                if (a[i] != a[i - 1] && a[i] != a[i + 1])
-                    Console.Write(a[i] + " ");
-            }
-            if (a[a.Length - 2] != a[a.Length - 1])
-                Console.Write(a[a.Length - 1]);
+                RemoveEle(ref a,c[i]);
+            }           
+            PrintArray(a);
         }
+       
+
     }
 }
 

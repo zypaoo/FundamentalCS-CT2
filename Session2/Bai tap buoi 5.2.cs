@@ -8,7 +8,7 @@ namespace Session2
 {
     internal class Bai_tap_buoi_52
     {
-        public static void Main(string[] args)
+        public static void Mainxx(string[] args)
         {
             //int[] a = new int[10];
             //InputData(a);
@@ -46,7 +46,7 @@ namespace Session2
                 Console.Write(a[i] + " ");
             }
         }
-        static void Sort(int[] a)
+        static void BubbleSort(int[] a)
         {
             for (int i = 0; i < a.Length - 1; i++)
             {
