@@ -17,7 +17,7 @@ namespace Session2
              baitap4();
              baitap5();
              baitap6();*/
-            baitap11();
+           // baitap11();
 
         }
         static void baitap1()
@@ -148,97 +148,8 @@ namespace Session2
             }
             Console.WriteLine($"The Highest frequency of character '{maxChar}' appears number of times: {maxCount}");
 
-        }
-        static void baitap11()
-        {
-            int[] a = new int[4];
-            bool check;
-            do
-            {
-                do
-                {
-
-                    Random rnd = new Random();
-                    int comp_num = rnd.Next(1000, 9999);
-                    khiem(a, comp_num);
-                    check = true;
-                    for (int i = 0; i < 3; i++)
-                    {
-                        for (int j = i + 1; j <= 3; j++)
-                        {
-                            if (a[i] == a[j])
-                            {
-                                check = false;
-                                break;
-                            }
-                        }
-                    }
-                }
-                while (check == false);
-                Console.WriteLine();
-                for (int h = 0; h < 10; h++)
-                {
-                    Console.Write("Nhap vao mot so co 4 chu so khac nhau i: ");
-                    int so = int.Parse(Console.ReadLine());
-                    int[] b = new int[4];
-                    int countcorrect = 0;
-                    int countposition = 0;
-                    khiem(b, so);
-                    for (int i = 0; i < 4; i++)
-                    {
-                        if (a[i] == b[i])
-                        {
-                            countposition++;
-                        }
-                        for (int j = 0; j < 4; j++)
-                        {
-                            if (a[i] == b[j])
-                            {
-                                countcorrect++;
-                            }
-                        }
-                    }
-
-                    if (countcorrect == 4 && countposition == 4)
-                    {
-                        Console.WriteLine("hay z tr");
-                        break;
-                    }
-                    if (h == 9 && countposition != 4 && countcorrect != 4)
-                    {
-                        Console.Write("ga v troi, so do la: ");
-                        for (int c = 0; c < 4; c++)
-                        {
-                            Console.Write(a[c]);                          
-                        }
-                        Console.WriteLine();
-                        break;
-                    }
-                    Console.WriteLine($"{countcorrect} correct number, {countposition} correct position");
-                }
-                    Console.Write("Ban co muon choi tiep hok? <Y/N>: ");
-                    string res = Console.ReadLine();
-                    if (res.ToUpper() == "N")
-                    {
-                        Console.WriteLine("hok choi thi thoi,bai bai");
-                        break;
-                    }
-                
-            }
-            while (true);
-            Console.ReadKey();
-
-
-            static void khiem(int[] a, int comp_num)
-            {
-                int n = 3;
-                while (n >= 0)
-                {
-                    a[n] = comp_num % 10;
-                    comp_num /= 10;
-                    n--;
-                }
-            }
-        }
+        } 
+       
+        
     }
 }

@@ -10,7 +10,7 @@ namespace Session2
 {
     internal class Bai_tap_buoi_5
     {
-        public static void Main(string[] args)
+        public static void Main8(string[] args)
         {
             int[] a = new int[100];
             InputRandomData(a);
