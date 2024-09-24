@@ -8,7 +8,7 @@ namespace Session2
 {
     internal class Bai_tap_multidimensional_array
     {
-        public static void Main(string[] args)
+        public static void Mainm(string[] args)
         {
             baitap22();
         }
