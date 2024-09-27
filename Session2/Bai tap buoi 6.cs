@@ -8,7 +8,7 @@ namespace Session2
 {
     internal class Bai_tap_buoi_6
     {
-        public static void Main(string[] args)
+        public static void Mainaaa(string[] args)
         {
             string[][][] a = new string[3][][];
             InputData(a);

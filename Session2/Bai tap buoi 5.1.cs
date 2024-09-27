@@ -10,30 +10,32 @@ namespace Session2
 {
     internal class Bai_tap_buoi_5
     {
-        public static void Main8(string[] args)
+        public static void Main(string[] args)
         {
             int[] a = new int[100];
             InputRandomData(a);
-            //PrintArray(a);
-            //CalculateAvg(a);
-            //Console.Write("The value you want to check: ");
-            //int val = int.Parse(Console.ReadLine());
-            //if (!CheckExist(a,val))
-            //    Console.WriteLine("No Exist");
-            //else Console.WriteLine(" Exist");
-            //if (FindIndex(a, val) > 0)
-            //    Console.WriteLine("Position: "+ FindIndex(a, val));
-            //Console.Write("Enter a number u wanna remove: ");
-            //int ele = int.Parse(Console.ReadLine());
-            //PrintArray(a);
-            //MaxMin(a);
-            //Reserve(a);
-            //FindDupe(a);
-            //int index = 0;
-            int[] c = new int[100];
+            BubbleSort(a);
             PrintArray(a);
-            RemoveDupe(a,c);
+            Console.WriteLine("The array without duplicate value:" );
+            PrintArray(RemoveDupe(a));
 
+
+        }
+        static int[] BubbleSort(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                for(int j = 0; j<a.Length-i-1; j++)
+                {
+                    if (a[j] > a[j + 1])
+                    {
+                        int temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+                    }
+                }
+            }
+            return a;
         }
         static void InputRandomData(int[] a)
         {
@@ -51,14 +53,14 @@ namespace Session2
             }
             Console.WriteLine();
         }
-        static void CalculateAvg(int[] a)
+        static double CalculateAvg(int[] a)
         {
             double s = 0;
             foreach (int i in a)
             {
                 s += i;
             }
-            Console.WriteLine($"The average value of array: {s / a.Length} ");
+            return s / a.Length;
         }
         static bool CheckExist(int[] a, int val)
         {
@@ -82,7 +84,7 @@ namespace Session2
             }
             return -1;
         }
-        static void RemoveEle(ref int[] a, int ele)
+        static  int[] RemoveEle(ref int[] a, int ele)
         {
             for (int i = 0; i < a.Length; i++)
             {
@@ -91,13 +93,13 @@ namespace Session2
                     for (int j = i; j < a.Length - 1; j++)
                     {
                         a[j] = a[j + 1];
-                       
-                    }                    
-                    Array.Resize(ref a, a.Length-1);
-                    i--; 
+
+                    }
+                    Array.Resize(ref a, a.Length - 1);
+                    i--;
                 }
             }
-
+            return a;
         }
         static void MaxMin(int[] a)
         {
@@ -112,18 +114,21 @@ namespace Session2
             }
             Console.WriteLine($"Max: {max}, Min: {min}");
         }
-        static void Reserve(int[] a)
+        static int[] Reserve(int[] a)
         {
-            for (int i = a.Length - 1; i >= 0; i--)
+            
+            for (int i = 0; i<a.Length/2; i++)
             {
-                Console.Write(a[i] + " ");
+                int temp = a[i];
+                a[i] = a[a.Length-i-1];
+                a[a.Length-i-1] = temp;
             }
+            return a;
         }
-        static void FindDupe(int[] a,ref int[] c)
+        static int[] FindDupe(int[] a)
         {
-            Array.Sort(a);
+            int[] c = new int[100];
             int index = 0;
-            Console.Write("The duplicate values: ");
             bool[] CheckPrint = new bool[100];
             for (int i = 0; i < a.Length; i++)
             {
@@ -132,7 +137,7 @@ namespace Session2
 
                     if (a[j] == a[i])
                     {
-                        
+
                         if (!CheckPrint[a[i]])
                         {
                             c[index] = a[i];
@@ -143,19 +148,18 @@ namespace Session2
                     }
                 }
             }
-            Array.Resize( ref c, index);    
-            PrintArray(c);
+            Array.Resize(ref c, index);
+            return c;
         }
-        static void RemoveDupe(int[] a, int[] c)
+        static int[] RemoveDupe(int[] a)
         {
-            FindDupe(a,ref c);
+            int[] c = FindDupe(a);
             for (int i = 0; i < c.Length; i++)
             {
-                RemoveEle(ref a,c[i]);
-            }           
-            PrintArray(a);
+                RemoveEle(ref a, c[i]);
+            }
+            return a;
         }
-       
 
     }
 }

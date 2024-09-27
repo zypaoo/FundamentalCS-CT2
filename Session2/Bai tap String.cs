@@ -9,10 +9,9 @@ namespace Session2
 {
     internal class Bai_tap_String
     {
-       private static void Main(string[] args)
+       private static void Mainm(string[] args)
 {
-    int count = 0;
-    baitap19();
+
 
 
 }
