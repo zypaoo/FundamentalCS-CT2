@@ -8,7 +8,7 @@ namespace Session2
 {
     internal class Bai_tap_multiarray1
     {
-        public static void Marin(string[] args)
+        public static void Ma4in(string[] args)
         {
             Console.Write("Enter the number of rows: ");
             int rows = int.Parse(Console.ReadLine());

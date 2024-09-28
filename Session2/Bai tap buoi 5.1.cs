@@ -126,6 +126,22 @@ namespace Session2
             }
             return a;
         }
+        //static void BubbleSortString(char[] s)
+        //{
+        //    for (int i = 0; i < s.Length; i++)
+        //    {
+        //        for (int j = 0; j < s.Length - i - 1; j++)
+        //        {
+        //            if (char.ToLower(s[j]) > char.ToLower(s[j + 1]))
+        //            {
+        //                char temp = s[j];
+        //                s[j] = s[j + 1];
+        //                s[j + 1] = temp;
+        //            }
+        //        }
+        //    }
+        //}
+
         static int[] FindDupe(int[] a)
         {
             int index = 0;
