@@ -10,14 +10,13 @@ namespace Session2
 {
     internal class Bai_tap_buoi_5
     {
-        public static void Main(string[] args)
+        public static void Mainb(string[] args)
         {
             int[] a = new int[100];
             InputRandomData(a);
             BubbleSort(a);
             PrintArray(a);
-            Console.WriteLine("The array without duplicate value:" );
-            PrintArray(RemoveDupe(a));
+            PrintArray(FindDupe(a));
 
 
         }
@@ -42,7 +41,7 @@ namespace Session2
             Random r = new Random();
             for (int i = 0; i < a.Length; i++)
             {
-                a[i] = r.Next(100);
+                a[i] = r.Next(0,100);
             }
         }
         static void PrintArray(int[] a)
@@ -95,10 +94,12 @@ namespace Session2
                         a[j] = a[j + 1];
 
                     }
-                    Array.Resize(ref a, a.Length - 1);
                     i--;
+                    Array.Resize(ref a, a.Length - 1);
                 }
+                
             }
+
             return a;
         }
         static void MaxMin(int[] a)
@@ -127,8 +128,9 @@ namespace Session2
         }
         static int[] FindDupe(int[] a)
         {
-            int[] c = new int[100];
             int index = 0;
+            int[] c = new int[100];
+            
             bool[] CheckPrint = new bool[100];
             for (int i = 0; i < a.Length; i++)
             {
@@ -140,6 +142,8 @@ namespace Session2
 
                         if (!CheckPrint[a[i]])
                         {
+                            
+                            
                             c[index] = a[i];
                             index++;
                             CheckPrint[a[i]] = true;

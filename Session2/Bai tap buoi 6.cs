@@ -8,15 +8,12 @@ namespace Session2
 {
     internal class Bai_tap_buoi_6
     {
-        public static void Mainaaa(string[] args)
+        public static void Main(string[] args)
         {
             string[][][] a = new string[3][][];
             InputData(a);
+            PrintArray(a);
 
-
-            
-            
-                    
         }
         static void InputData(string[][][] a)
         {
@@ -40,6 +37,22 @@ namespace Session2
             }
 
         }
+
+        static void PrintArray(string[][][] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                {
+                    for (int k = 0; k < a[i][j].Length; k++)
+                    {
+                        Console.Write(a[i][j][k] + " ");
+                    }                      
+                }
+                Console.WriteLine();
+            }
+        }
+
 
     }
 }
